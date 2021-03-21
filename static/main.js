@@ -5,12 +5,12 @@ var socket = io.connect(location.protocol + '//' + document.domain +':' + locati
 //      socket.emit('my event', {data: 'I\'m connected!'});
 //  });
 
-// socket.on("push",function(data){
-//    console.log(data)
-// })
+socket.on("push",function(data){
+   console.log(data)
+})
 
 function send(){
    sendBox=document.getElementById("msgBox")
-   socket.emit("msg","hello")
+   socket.emit("msg",sendBox.value)
    sendBox.value=""
 };

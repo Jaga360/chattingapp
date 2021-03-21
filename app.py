@@ -11,9 +11,9 @@ socketio = SocketIO(app)
 def root():
     return app.send_static_file('index.html')
 
-# @socketio.on("msg")
-# def handle_msg(data):
-#     socketio.emit('push',data, broadcast=True, include_self = False)
+@socketio.on("msg")
+def handle_msg(data):
+    socketio.emit('push',data, broadcast=True, include_self = False)
 
 
 if __name__ == '__main__':
